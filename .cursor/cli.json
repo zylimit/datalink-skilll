@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(git:status*)",
+      "Shell(git:diff*)",
+      "Shell(git:log*)",
+      "Shell(git:show*)",
+      "Shell(node:.claude/scripts/*)",
+      "Shell(node:.claude/harness/harness.mjs*)",
+      "Shell(bash:.claude/scripts/*)",
+      "Shell(bash:.claude/tests/*)",
+      "Read(**)"
+    ],
+    "deny": [
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Read(**/*.key)",
+      "Read(**/*.pem)",
+      "Read(**/id_rsa*)",
+      "Read(**/id_ed25519*)",
+      "Read(**/secrets/**)",
+      "Read(**/credentials*)",
+      "Write(**/.env)",
+      "Write(**/.env.*)",
+      "Write(**/*.key)",
+      "Write(**/*.pem)"
+    ]
+  }
+}
