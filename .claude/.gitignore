@@ -12,6 +12,7 @@ signals.jsonl
 .tdd-gate-advised
 .precompact-block-epoch
 .async-verify-last
+evidence/gate-block.log
 
 # 大仓治理 harness 运行态回执（按 task 单条状态，可覆盖，永不入库；harness.mjs / catalog 本体照常分发）
 harness/receipts/

@@ -1,1 +1,0 @@
-2026-11-11T18:57:33Z	secret-exfil-guard	检测到命令参数是密钥文件路径（.env/id_rsa/*.pem/credentials），动词又不在只碰元数据的放行表里
