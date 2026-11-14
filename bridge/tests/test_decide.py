@@ -157,6 +157,14 @@ class TestDecide(unittest.TestCase):
         result = decide(site, [_config(site, "督导甲")], prior)
         self.assertEqual(_actions(result), [])
 
+    def test_same_version_not_dispatched_writes_plan_and_dispatches(self):
+        from datalink_bridge.decide import decide
+
+        site = _load("site-ready.json")
+        prior = _prior(site["version"], dispatched=False, has_feedback=False)
+        result = decide(site, [_config(site, "督导甲")], prior)
+        self.assertCountEqual(_kinds(result), [ACT_WRITE_PLAN, ACT_DISPATCH])
+
     def test_version_changed_without_feedback_updates_plan_and_occ_time(self):
         from datalink_bridge.decide import decide
 

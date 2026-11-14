@@ -84,11 +84,11 @@
 | `ready` | ARIANE 的结论：这个站现在可不可以派任务。规则只在 ARIANE 里算（站点进行中且 OCC 已确认），接收方不要自己推 |
 | `version` | 由 `ready`、`occ.date`、`occ.time`、`subcontractors` 算出的短哈希；这几项都没变则不变。接收方记下「这个站的这个版本我处理过」 |
 | `status` | `not_started` / `in_progress` / `done` |
-| `occ.time` | 可能为 `null`（只定了日期） |
+| `occ.time` | 没单独设过时间的站给 ARIANE 的默认值 `08:30`（与 Dashboard 显示一致）；只有 `occ.date` 为 `null` 时才是 `null` |
 | `occ.date`、`occ.time` | 站点当地时间，不换算；时区名在 `occ.timezone` |
 | `subcontractors` | 看板站名下的分包商标签，可能为空数组，也可能多个 |
 
-站不存在：404，`{"detail": {"code": "site_not_found", "params": {"key": "..."}, "message": "..."}}`（与 ARIANE 现有错误形状一致）。站存在但不可派：200，`ready=false`。
+两个站的名字和序号完全相同（数据里没出现过）：409 `site_key_ambiguous`，ARIANE 不替接收方挑一个，接收方记下来报人工。站不存在：404，`{"detail": {"code": "site_not_found", "params": {"key": "..."}, "message": "..."}}`（与 ARIANE 现有错误形状一致）。站存在但不可派：200，`ready=false`。
 
 ### 4.2 取清单
 
@@ -98,7 +98,7 @@
 
 ## 5. 站点标识
 
-`site_key` = 看板上显示的站名加序号，形如 `CHATILLON LA PALUD #1`；没有序号的站就是站名本身。接收方系统里的站点文字要与它逐字一致（大小写、空格都算）。对不上的站，接收方不派任务，记下来报人工，不猜。
+`site_key` = 站名，站点有序号时后面加 ` #序号`，形如 `CHATILLON LA PALUD #1`；没有序号的站就是站名本身。**注意：ARIANE 的两个页面（Detailed Plan 看板、Integration Plan Dashboard）上，只有重名的站才显示序号，所以不能照页面上看到的站名抄**（2026-11-14 更正：上一版写「与 Dashboard 显示一致」是错的，带序号的完整写法只出现在 Dashboard 的悬停提示和修改记录里）。接收方系统里的站点文字要与 `site_key` 逐字一致（大小写、空格都算）；准确的文字以清单接口（第 4.2 节）返回的 `site_key` 为准，接收方应把对不上的站连同它的 `site_key` 原文列出来，供人复制。`site_key` 是否改成与页面显示一致，待用户定。对不上的站，接收方不派任务，记下来报人工，不猜。
 
 ## 6. 身份验证
 
@@ -112,7 +112,7 @@
 
 ## 8. 样本与用例
 
-本目录 `site-feed-v1-samples/` 下的 JSON 是两边共用的测试数据（2026-11-14 手写，清单见其中 README.md）：四种通知各一条、取一个站五种情况、清单一条、三种错误各一条。ARIANE 的实现以样本为准，用例保证真实输出与样本的字段名、类型、可空性、枚举值一致（`version`、`event_id`、时间的值本身每次不同）；接收方用样本做假 ARIANE。错误码：口令不对 401 `feed_unauthorized`，功能没开 404 `feed_disabled`，站不存在 404 `site_not_found`。
+本目录 `site-feed-v1-samples/` 下的 JSON 是两边共用的测试数据（2026-11-14 手写，清单见其中 README.md）：四种通知各一条、取一个站五种情况、清单一条、四种错误各一条。ARIANE 的实现以样本为准，用例保证真实输出与样本的字段名、类型、可空性、枚举值一致（`version`、`event_id`、时间的值本身每次不同）；接收方用样本做假 ARIANE。错误码：口令不对 401 `feed_unauthorized`，功能没开 404 `feed_disabled`，站不存在 404 `site_not_found`，标识重复 409 `site_key_ambiguous`。
 
 ## 9. 不在本约定里的
 

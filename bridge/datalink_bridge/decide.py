@@ -1,7 +1,7 @@
 """派工决定。纯函数，不发请求。
 
 命中即返回，顺序如下：
-1. 这个 version 已经处理过 → 不做。
+1. 同一个 version 已经派出去过 → 不做。上次没派出去的，不当成已经处理过。
 2. 现在不可派，而且以前派过 → 只记「待收回」，不撤任务。
 3. 现在不可派，没派过 → 不做。
 4. 这个 site_key 没有配置行 → 不派，记「缺督导」。
@@ -23,7 +23,7 @@ NOTE_DUP_CONFIG = "配置重复"
 
 
 def decide(site: dict, configs: list, prior: dict | None) -> dict:
-    if prior is not None and prior["version"] == site["version"]:
+    if prior is not None and prior["version"] == site["version"] and _is_true(prior, "dispatched"):
         return _result([], [])
 
     ready = site["ready"]

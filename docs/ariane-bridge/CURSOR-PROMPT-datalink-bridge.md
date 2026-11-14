@@ -1,7 +1,7 @@
 # 给 Cursor：开发 datalink-bridge（一个落盘的程序，不是技能）
 
 > 写这份说明的人（ARIANE 的主 Agent）连不上内网、调不了 DataLink 开放 API，只能看你贴回的输出。所以每一步都要把命令和完整输出贴回来。
-> 工作目录：`~/code/datalink-skill`。配套文件：`docs/ariane-bridge/site-feed-v1.md`（接口约定）、`docs/ariane-bridge/site-feed-v1-samples/`（约定样本，13 个 JSON 加一份清单）、本文件。
+> 工作目录：`~/code/datalink-skill`。配套文件：`docs/ariane-bridge/site-feed-v1.md`（接口约定）、`docs/ariane-bridge/site-feed-v1-samples/`（约定样本，14 个 JSON 加一份清单）、本文件。
 
 ## 0. 先纠正一件事
 
@@ -20,7 +20,7 @@ ARIANE（站点跟踪系统，部署在内网 feilan-node 的 8765 端口）会�
 
 - ARIANE 不知道 DataLink 的存在，你也不要让它知道：不改 ARIANE 的代码、不读它的数据库、不调它约定以外的接口。
 - 哪个站可以派，由 ARIANE 说了算（约定里的 `ready`）。你的程序不自己判断「OCC 前一周」之类的规则。
-- 哪个站派给哪个督导，读 DataLink 的「站点督导配置」表。
+- 哪个站派给哪个督导，读 DataLink 的「站点督导配置」表。表里的站点文字必须与 ARIANE 的 `site_key` 逐字一致（有序号的站带 ` #序号`）。**不能照 ARIANE 页面上看到的站名抄**：看板和 Dashboard 都只给重名的站显示序号（2026-11-14 更正，上一版说照 Dashboard 抄是错的）。对不上的站不派、记「缺督导」，并且 `plan`、`reconcile`、`doctor` 的输出里要把每个缺督导的站的 `site_key` 原文单独列一行，方便项目经理直接复制进「站点督导配置」。
 - 本期只派 OCC 任务。Retassage、Dismantle 任务和督导反馈回 ARIANE 都不做。
 
 ## 2. 先读这三样，读完再动手

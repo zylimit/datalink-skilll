@@ -1,0 +1,9 @@
+{
+  "detail": {
+    "code": "site_key_ambiguous",
+    "params": {
+      "key": "MEXIMIEUX #2"
+    },
+    "message": "several sites have this key"
+  }
+}
