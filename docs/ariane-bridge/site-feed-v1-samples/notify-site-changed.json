@@ -1,0 +1,11 @@
+{
+  "schema": "ariane.site-feed/1",
+  "event_id": "6a1d2e3f-4b5c-4d6e-8f70-112233445566",
+  "seq": 43,
+  "type": "site.changed",
+  "site_key": "LAGNIEU #1",
+  "site_id": 25,
+  "version": "5e0f2a9b7c13",
+  "occurred_at": "2026-11-18T11:00:05Z",
+  "test": false
+}

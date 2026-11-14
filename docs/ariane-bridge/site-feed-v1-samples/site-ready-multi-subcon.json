@@ -1,0 +1,22 @@
+{
+  "schema": "ariane.site-feed/1",
+  "site_key": "LAGNIEU #1",
+  "site_id": 25,
+  "name": "LAGNIEU",
+  "seq_no": 1,
+  "region": "UCI-EST",
+  "subcontractors": [
+    "HOVIA",
+    "SOGETREL"
+  ],
+  "status": "in_progress",
+  "occ": {
+    "date": "2026-12-08",
+    "time": "14:30",
+    "confirmed": true,
+    "timezone": "Europe/Paris"
+  },
+  "ready": true,
+  "version": "5e0f2a9b7c13",
+  "updated_at": "2026-11-18T11:00:05Z"
+}

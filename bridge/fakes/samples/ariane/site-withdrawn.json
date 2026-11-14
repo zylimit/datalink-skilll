@@ -1,0 +1,19 @@
+{
+  "schema": "ariane.site-feed/1",
+  "site_key": "SAINT VULBAS #1",
+  "site_id": 27,
+  "name": "SAINT VULBAS",
+  "seq_no": 1,
+  "region": "UCI-EST",
+  "subcontractors": [],
+  "status": "not_started",
+  "occ": {
+    "date": null,
+    "time": null,
+    "confirmed": false,
+    "timezone": "Europe/Paris"
+  },
+  "ready": false,
+  "version": "a8d3f6120b9e",
+  "updated_at": "2026-11-18T12:30:00Z"
+}

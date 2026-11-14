@@ -1,0 +1,21 @@
+{
+  "schema": "ariane.site-feed/1",
+  "site_key": "CHATILLON LA PALUD #1",
+  "site_id": 17,
+  "name": "CHATILLON LA PALUD",
+  "seq_no": 1,
+  "region": "UCI-EST",
+  "subcontractors": [
+    "HOVIA"
+  ],
+  "status": "in_progress",
+  "occ": {
+    "date": "2026-12-01",
+    "time": "09:00",
+    "confirmed": true,
+    "timezone": "Europe/Paris"
+  },
+  "ready": true,
+  "version": "9f2c41d07a1e",
+  "updated_at": "2026-11-18T09:02:11Z"
+}

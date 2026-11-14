@@ -1,0 +1,7 @@
+{
+  "detail": {
+    "code": "feed_unauthorized",
+    "params": {},
+    "message": "feed token missing or wrong"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema": "ariane.site-feed/1",
+  "event_id": "f0e1d2c3-b4a5-4697-8879-6a5b4c3d2e1f",
+  "seq": 45,
+  "type": "ping",
+  "site_key": null,
+  "site_id": null,
+  "version": null,
+  "occurred_at": "2026-11-18T12:31:00Z",
+  "test": true
+}

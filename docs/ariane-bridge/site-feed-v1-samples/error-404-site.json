@@ -1,0 +1,9 @@
+{
+  "detail": {
+    "code": "site_not_found",
+    "params": {
+      "key": "NO SUCH SITE #9"
+    },
+    "message": "site not found"
+  }
+}

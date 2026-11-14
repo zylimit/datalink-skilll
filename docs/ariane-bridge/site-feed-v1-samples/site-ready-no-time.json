@@ -1,0 +1,21 @@
+{
+  "schema": "ariane.site-feed/1",
+  "site_key": "MEXIMIEUX #2",
+  "site_id": 23,
+  "name": "MEXIMIEUX",
+  "seq_no": 2,
+  "region": "UCI-EST",
+  "subcontractors": [
+    "SOGETREL"
+  ],
+  "status": "in_progress",
+  "occ": {
+    "date": "2026-12-05",
+    "time": null,
+    "confirmed": true,
+    "timezone": "Europe/Paris"
+  },
+  "ready": true,
+  "version": "c41d8e7f0a52",
+  "updated_at": "2026-11-18T10:15:40Z"
+}

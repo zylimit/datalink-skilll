@@ -1,0 +1,7 @@
+{
+  "detail": {
+    "code": "feed_disabled",
+    "params": {},
+    "message": "site feed is not enabled"
+  }
+}

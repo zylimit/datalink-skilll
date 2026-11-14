@@ -1,0 +1,89 @@
+{
+  "schema": "ariane.site-feed/1",
+  "sites": [
+    {
+      "schema": "ariane.site-feed/1",
+      "site_key": "CHATILLON LA PALUD #1",
+      "site_id": 17,
+      "name": "CHATILLON LA PALUD",
+      "seq_no": 1,
+      "region": "UCI-EST",
+      "subcontractors": [
+        "HOVIA"
+      ],
+      "status": "in_progress",
+      "occ": {
+        "date": "2026-12-01",
+        "time": "09:00",
+        "confirmed": true,
+        "timezone": "Europe/Paris"
+      },
+      "ready": true,
+      "version": "9f2c41d07a1e",
+      "updated_at": "2026-11-18T09:02:11Z"
+    },
+    {
+      "schema": "ariane.site-feed/1",
+      "site_key": "MEXIMIEUX #2",
+      "site_id": 23,
+      "name": "MEXIMIEUX",
+      "seq_no": 2,
+      "region": "UCI-EST",
+      "subcontractors": [
+        "SOGETREL"
+      ],
+      "status": "in_progress",
+      "occ": {
+        "date": "2026-12-05",
+        "time": null,
+        "confirmed": true,
+        "timezone": "Europe/Paris"
+      },
+      "ready": true,
+      "version": "c41d8e7f0a52",
+      "updated_at": "2026-11-18T10:15:40Z"
+    },
+    {
+      "schema": "ariane.site-feed/1",
+      "site_key": "LAGNIEU #1",
+      "site_id": 25,
+      "name": "LAGNIEU",
+      "seq_no": 1,
+      "region": "UCI-EST",
+      "subcontractors": [
+        "HOVIA",
+        "SOGETREL"
+      ],
+      "status": "in_progress",
+      "occ": {
+        "date": "2026-12-08",
+        "time": "14:30",
+        "confirmed": true,
+        "timezone": "Europe/Paris"
+      },
+      "ready": true,
+      "version": "5e0f2a9b7c13",
+      "updated_at": "2026-11-18T11:00:05Z"
+    },
+    {
+      "schema": "ariane.site-feed/1",
+      "site_key": "SAINT VULBAS #1",
+      "site_id": 27,
+      "name": "SAINT VULBAS",
+      "seq_no": 1,
+      "region": "UCI-EST",
+      "subcontractors": [],
+      "status": "not_started",
+      "occ": {
+        "date": null,
+        "time": null,
+        "confirmed": false,
+        "timezone": "Europe/Paris"
+      },
+      "ready": false,
+      "version": "a8d3f6120b9e",
+      "updated_at": "2026-11-18T12:30:00Z"
+    }
+  ],
+  "generated_at": "2026-11-18T12:35:00Z"
+}
